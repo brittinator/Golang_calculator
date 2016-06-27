@@ -23,7 +23,7 @@ func operator() {
 		fmt.Println(op)
 		nums()
 	} else if op == "-" || op == "sub" {
-
+		first, second := num()
 	} else if op == "*" || op == "mul" {
 	} else if op == "/" || op == "div" {
 	} else {
@@ -32,12 +32,13 @@ func operator() {
 }
 
 func nums() (int, int) {
+	// Asks for 1st and 2nd number, trims whitespace then converts to a number
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Please enter your first number: ")
 	firStr, _ := reader.ReadString('\n')
-	firInt := strings.TrimSpace(firStr)
+	// firInt := strings.TrimSpace(firStr)
 	firInt, _ := strconv.Atoi(firInt)
 	fmt.Println("Please enter your second number: ")
 	sec, _ := reader.ReadString('\n')
-	return firInt, sec
+	return firInt, secInt
 }
